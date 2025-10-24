@@ -6,16 +6,19 @@ import net.ccn36.lachhabmohammed.conferenceservice.repository.ConfRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
 
 @SpringBootApplication
+@EnableFeignClients
 public class ConferenceServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ConferenceServiceApplication.class, args);
     }
+
     @Bean
     public CommandLineRunner commandLineRunner(ConfRepository confRepository) {
         return args -> {
